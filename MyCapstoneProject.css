@@ -283,6 +283,7 @@ li{
         height:200px;
     }
     li{
+        color: rgb(1, 1, 81);
         font-size:smaller;
         text-wrap:nowrap;
         color:blue;
