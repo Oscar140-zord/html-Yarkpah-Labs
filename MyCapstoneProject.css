@@ -239,7 +239,10 @@ li{
     display: none;
 }
 @media screen and (max-width:780px){
-  
+      a{
+    text-decoration: none;
+    color: rgb(1, 1, 81)
+}
     .aboutMe-para .p1{
         font-size:40px;
     }
