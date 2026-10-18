@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarkpah Projects(zor-d)</title>
+    <style>
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width: auto;
+            background-color: rgb(192, 192, 252);
+            background: linear-gradient(to bottom, rgb(192, 192, 252), rgb(138, 43, 226));
+        }
+        img{
+            height:150px;
+            width:150px
+        }
+         
+        .Projects{
+            gap:15px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex:1;
+        }
+            
+        .back{
+        position:absolute;
+        font-size: 30px;
+        font-weight: 400;
+        color: rgb(1, 1, 81);
+        top:20px;
+        right:20px
+        }
+        .r1{
+            right:130px;
+        }
+        p{
+            color:rgb(133, 42, 6);
+            font-size:small;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+          a:hover{
+            color:blue;
+        }
+       #projectsName{
+            text-decoration: underline;
+            bottom: 120px;
+            text-wrap: nowrap;
+        }
+
+        /*For mobile devices*/
+ 
+        @media screen and (max-width:780px){
+            .Projects{
+                display:flex;
+                gap: 10px;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+            img{
+            height:150px;
+            width:200px
+        } 
+        #projectsName{
+            margin-bottom: -5px;
+            text-decoration: underline;
+        }
+        }
+        .back{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <a href="./MyCapstoneProject.html" class="back r2">Home</a>
+        
+        <p id="Clickme">Click to view Projects <span>&#10549;</span></p>
+            <div class="Projects">
+                
+                 <a href="./MyProjects/PricingTable.html"><p id="projectsName">Pricing table</p></a>
+                <a href="./MyProjects/PricingTable.html">
+                    <img src="./zorSkillsPic/image.png" alt="My Project Image">
+                </a>
+                <a href="./MyProjects/AgencyDesign.html"><p id="projectsName">Design Agency</p></a>
+                <a href="./MyProjects/AgencyDesign.html">
+                    <img src="./zorSkillsPic/Screenshot 2026-10-16 112556.png" alt="My Project Image">
+                </a>
+               <a href="./MyProjects/movieNight.html"><p id="projectsName">Ticket Design</p></a>
+                <a href="./MyProjects/movieNight.html">
+                    <img src="./zorSkillsPic/Screenshot 2026-10-16 113821.png" alt="My Project Image">
+                </a>
+                
+            
+        </div>
+    </main>
+</body>
+</html>

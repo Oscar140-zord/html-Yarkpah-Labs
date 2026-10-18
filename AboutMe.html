@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarkpah Labs</title>
+    <Style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(192, 192, 252);
+            background: linear-gradient(to bottom, rgb(192, 192, 252), rgb(138, 43, 226));
+            
+        }
+        
+        img{
+            height: 200px;
+            width: fit-content;
+            border-radius: 40%;
+        }
+
+       .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+       }
+       .info{
+        text-align: center;
+       }
+       span{
+        display: block;
+        margin-bottom: 10px;
+       }
+       #S1{
+        font-family:fantasy; 
+        font-size: 40px;
+       }
+       #S2{
+        font-family: fantasy;
+        color: rgb(41, 40, 40);
+        font-size: 20px;
+       }
+       #S3{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       }
+        a{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        position:absolute;
+        font-size: 30px;
+        font-weight: 400;
+        color: rgb(1, 1, 81);
+        top:20px;
+        right:20px
+        }
+
+        #Myprojects{
+            position:absolute;
+            top:20px;
+            right:130px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        a:hover{
+            color:blue;
+        }
+
+        a:active{
+            text-decoration:underline;
+        }
+
+        /*For mobile devices*/
+         @media screen and (max-width:780px){
+            #Myprojects{
+                font-size: 20px;
+                right:100px;
+            }
+            a{
+                font-size: 20px;
+            }
+         }
+
+    </Style>
+</head>
+<body>
+    <main>
+        <a href="./MyCapstoneProject.html">Home</a>
+        <a id="Myprojects" href="./MyProjects.html">My Projects</a>
+        <div class="wrapper">
+            <img src="./zorPictures/Messenger_creation_52DEDB96-C5ED-406A-9B7A-23280957D7D7.jpeg" alt="">
+            <div class="info">
+                 <span id="S1">OSCAR S. YARKPAH</span>
+                 <span id="S2">0888448276/0778304087</span>
+                <span id="S3">CONGO TOWN White Flower Community</span>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Workshop Ticket</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e9edf3;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 30px;
+        }
+
+        .ticket {
+            width: 900px;
+            min-height: 360px;
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* LEFT SIDE */
+        .ticket-main {
+            flex: 1;
+            padding: 35px 45px;
+            position: relative;
+            background: linear-gradient(135deg, #0b3d91, #1261c9);
+            color: white;
+        }
+
+        .organization {
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+        }
+
+        .workshop-label {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 42px;
+            line-height: 1.05;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 30px;
+        }
+
+        .detail {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.7;
+            margin-bottom: 4px;
+        }
+
+        .detail-value {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* DECORATIVE CIRCLES */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.12);
+        }
+
+        .circle-one {
+            width: 180px;
+            height: 180px;
+            right: -80px;
+            top: -70px;
+        }
+
+        .circle-two {
+            width: 250px;
+            height: 250px;
+            right: -130px;
+            bottom: -130px;
+        }
+
+        /* RIGHT SIDE */
+        .ticket-side {
+            width: 270px;
+            background: #ffffff;
+            color: #182230;
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            border-left: 2px dashed #ccd2da;
+            position: relative;
+        }
+
+        .admit {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #697586;
+        }
+
+        .ticket-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0b3d91;
+            margin-top: 6px;
+        }
+
+        .qr {
+            width: 115px;
+            height: 115px;
+            margin: 15px auto;
+            border: 8px solid white;
+            outline: 1px solid #d7dce3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(90deg, #111 10%, transparent 10% 20%, #111 20% 30%, transparent 30% 40%, #111 40% 50%, transparent 50% 60%, #111 60% 70%, transparent 70% 80%, #111 80%),
+                linear-gradient(#111 10%, transparent 10% 20%, #111 20% 30%, transparent 30% 40%, #111 40% 50%, transparent 50% 60%, #111 60% 70%, transparent 70% 80%, #111 80%);
+            background-size: 23px 23px;
+        }
+
+        .qr-text {
+            font-size: 10px;
+            color: #697586;
+        }
+
+        .contact {
+            font-size: 11px;
+            line-height: 1.6;
+            color: #697586;
+        }
+
+        .free {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 15px;
+            border-radius: 20px;
+            background: #e8f1ff;
+            color: #0b3d91;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* PRINT */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .ticket {
+                box-shadow: none;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 750px) {
+            body {
+                padding: 15px;
+            }
+
+            .ticket {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .ticket-side {
+                width: 100%;
+                border-left: none;
+                border-top: 2px dashed #ccd2da;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+            .title {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ticket">
+
+        <!-- MAIN TICKET -->
+        <div class="ticket-main">
+
+            <div class="circle circle-one"></div>
+            <div class="circle circle-two"></div>
+
+            <div class="organization">
+                CITY OF JOY YOUTH DEPARTMENT
+            </div>
+
+            <div class="workshop-label">
+                You're Invited To
+            </div>
+
+            <h1 class="title">
+                YOUTH<br>
+                WORKSHOP
+            </h1>
+
+            <p class="tagline">
+                Empower • Connect • Create
+            </p>
+
+            <div class="details">
+
+                <div class="detail">
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 25, 2026</span>
+                </div>
+
+                <div class="detail">
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">10:00 AM – 3:00 PM</span>
+                </div>
+
+                <div class="detail">
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY CHURCH TOGBAH CAMP</span>
+                </div>
+
+                <div class="detail">
+                    <span class="detail-label">Theme</span>
+                    <span class="detail-value">Building Skills for the Future</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TICKET STUB -->
+        <div class="ticket-side">
+
+            <div>
+                <div class="admit">
+                    Admission Ticket
+                </div>
+
+                <div class="ticket-number">
+                  
+                </div>
+            </div>
+
+            <div>
+                <div class="qr">
+                    QR
+                </div>
+
+                <div class="qr-text">
+                    Scan to verify ticket
+                </div>
+
+                <div class="free">
+                    100Ld
+                </div>
+            </div>
+
+            <div class="contact">
+                Contact: +231 888448276<br>
+                Email: yarkpahoscar@gmail.com
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

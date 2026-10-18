@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youth Workshop - 10 Tickets A4</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 8mm;
+    }
+
+    body {
+        background: #e5e7eb;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+        width: 194mm;
+        height: 281mm;
+        margin: 10mm auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 3mm;
+    }
+
+    .ticket {
+        height: 53mm;
+        background: white;
+        display: flex;
+        overflow: hidden;
+        border: 0.3mm solid #b9c0ca;
+        border-radius: 3mm;
+        position: relative;
+    }
+
+    /* Main section */
+    .ticket-main {
+        width: 70%;
+        background: linear-gradient(135deg, #0b3d91, #1261c9);
+        color: white;
+        padding: 5mm;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .organization {
+        font-size: 9px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 4mm;
+        color: #e8f1ff;
+    }
+
+    .label {
+        font-weight: bold;
+        font-size: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: .75;
+        margin-bottom: 1mm;
+        color: #e8f1ff;
+    }
+
+    .title {
+        font-size: 19px;
+        line-height: .95;
+        font-weight: 900;
+        margin-bottom: 2mm;
+    }
+
+    .tagline {
+        font-weight: bold;
+        font-size: 7px;
+        opacity: .9;
+        margin-bottom: 5mm;
+        color: #e8f1ff;
+    }
+
+    .details {
+        
+        font-weight: 400;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5mm;
+    }
+
+    .detail-label {
+        color: black;
+        display: block;
+        font-size: 5px;
+        text-transform: uppercase;
+        letter-spacing: .7px;
+        opacity: .65;
+        margin-bottom: .7mm;
+        color: #e8f1ff;
+    }
+
+    .detail-value {
+        display: block;
+        font-size: 6.5px;
+        font-weight: bold;
+        color: #e8f1ff;
+    }
+
+    /* Decorative circles */
+    .circle {
+        position: absolute;
+        border: .4mm solid rgba(255,255,255,.12);
+        border-radius: 50%;
+    }
+
+    .circle.one {
+        width: 35mm;
+        height: 35mm;
+        right: -17mm;
+        top: -15mm;
+    }
+
+    .circle.two {
+        width: 45mm;
+        height: 45mm;
+        right: -22mm;
+        bottom: -23mm;
+    }
+
+    /* Stub */
+    .ticket-stub {
+        width: 30%;
+        padding: 4mm 2mm;
+        text-align: center;
+        color: #172033;
+        border-left: .5mm dashed #9ca3af;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .admit {
+        font-size: 5px;
+        text-transform: uppercase;
+        letter-spacing: .7px;
+        color: #6b7280;
+    }
+
+    .ticket-number {
+        font-size: 8px;
+        font-weight: bold;
+        color: #0b3d91;
+        margin-top: 1mm;
+    }
+
+    .qr {
+        width: 17mm;
+        height: 17mm;
+        margin: 1mm auto;
+        border: 1mm solid white;
+        outline: .3mm solid #cbd5e1;
+
+        background:
+            linear-gradient(90deg,
+                #111 10%, transparent 10% 20%,
+                #111 20% 30%, transparent 30% 40%,
+                #111 40% 50%, transparent 50% 60%,
+                #111 60% 70%, transparent 70% 80%,
+                #111 80%),
+            linear-gradient(
+                #111 10%, transparent 10% 20%,
+                #111 20% 30%, transparent 30% 40%,
+                #111 40% 50%, transparent 50% 60%,
+                #111 60% 70%, transparent 70% 80%,
+                #111 80%);
+        background-size: 3.4mm 3.4mm;
+    }
+
+    .qr-text {
+        font-size: 4.5px;
+        color: #6b7280;
+    }
+
+    .free {
+        display: inline-block;
+        margin-top: 1.5mm;
+        padding: 1mm 2mm;
+        border-radius: 5mm;
+        background: #e8f1ff;
+        color: #0b3d91;
+        font-size: 5px;
+        font-weight: bold;
+    }
+
+    .contact {
+        font-size: 4.5px;
+        line-height: 1.4;
+        color: #6b7280;
+    }
+
+    /* Print settings */
+    @media print {
+        body {
+            background: white;
+        }
+
+        .page {
+            margin: 0;
+        }
+
+        .ticket {
+            break-inside: avoid;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- TICKET 1 -->
+    <div class="ticket">
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-001</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TICKETS 2–10 -->
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 AM</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-002</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-003</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-004</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-005</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-006</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-007</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-008</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-009</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ticket">
+        
+        <div class="ticket-main">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+
+            <div class="organization">CITY OF JOY YOUTH DEPARTMENT</div>
+
+            <div class="label">You're Invited To</div>
+
+            <div class="title">YOUTH<br>MOVIE NIGHT</div>
+
+            <div class="tagline">
+                Empower • Connect • Create a better mindset
+            </div>
+
+            <div class="details">
+                <div>
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value">August 29, 2026</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value">6:00 => 9:00 pm</span>
+                </div>
+
+                <div>
+                    <span class="detail-label">Venue</span>
+                    <span class="detail-value">CITY OF JOY TOGBAH CAMP</span>
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-stub">
+            <div>
+                <div class="admit">Admission</div>
+                <div class="ticket-number">MN-010</div>
+            </div>
+
+            <div>
+                <div class="qr"></div>
+                <div class="qr-text">Scan to verify</div>
+                <div class="free">100 LD </div>
+            </div>
+
+            <div class="contact">
+                +231 888448276<br>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
